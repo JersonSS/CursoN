@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -41,6 +43,7 @@ public class Categoria implements Serializable
         this.categoria_id = categoria_id;
         this.descripcion = descripcion;
     }
+    
 
     public Integer getCategoria_id() {
         return categoria_id;

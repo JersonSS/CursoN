@@ -2,6 +2,8 @@ package pe.senati.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,6 +32,7 @@ public class Jefe implements Serializable
     private String nacionalidad;
 
     @OneToOne(mappedBy = "jefe")// jefe(clase) lo que se va enviar como foraneo a categoria
+    @JsonIgnore
     private Categoria categoria;
 
     public Jefe() {}

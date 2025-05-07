@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +37,7 @@ public class Proveedor implements Serializable
     private Long ruc;
 
     @ManyToMany(mappedBy = "itemsProveedor")
+    @JsonIgnore
     private Set<Producto> itemsProducto = new HashSet<>();
 
     public Proveedor() {}

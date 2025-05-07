@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.Categoria;
+import pe.senati.mapper.CategoriaMapper;
 import pe.senati.service.CategoriaService;
+import pe.senati.util.UtilMapper;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +33,8 @@ public class CategoriaRestController
     public ResponseEntity<?> listar_GET()
     {
         Collection<Categoria> list= categoriaService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Collection<CategoriaMapper>listMapper = UtilMapper.convertToCategorias(list);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
     @PostMapping("/registrar")
@@ -72,10 +75,11 @@ public class CategoriaRestController
     public ResponseEntity<?> buscar_GET(@PathVariable Integer categoria_id) {
         
         Categoria categoriaDb = categoriaService.findById(categoria_id);
+        CategoriaMapper categoriaMapper = new CategoriaMapper(categoriaDb);
 
         if (categoriaDb != null) 
         {
-            return new ResponseEntity<>(categoriaDb, HttpStatus.FOUND);
+            return new ResponseEntity<>(categoriaMapper, HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>("¡Error, categoria no encontrado!", HttpStatus.NOT_FOUND);

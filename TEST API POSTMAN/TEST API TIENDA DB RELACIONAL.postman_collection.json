@@ -1,0 +1,946 @@
+{
+	"info": {
+		"_postman_id": "6398a2eb-c686-414b-8243-781b9eaf5048",
+		"name": "TEST API TIENDA DB RELACIONAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44733555"
+	},
+	"item": [
+		{
+			"name": "CRUD PRODUCTO",
+			"item": []
+		},
+		{
+			"name": "CRUD PROVEEDOR",
+			"item": [
+				{
+					"name": "CREAR PROVEEDOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Field\",\r\n    \"telefono\": 996633412,\r\n    \"website\": \"www.field.pe\",\r\n    \"ruc\": 20333456789\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR PROVEEDOR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Sayon\",\r\n    \"telefono\": 996633412,\r\n    \"website\": \"www.sayon.pe\",\r\n    \"ruc\": 20333456789\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/editar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"editar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR PROVEEDOR",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR PROVEEDOR POR ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/buscar/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"buscar",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONSULTAR PROVEEDOR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREAR PROVEEDOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Field\",\r\n    \"telefono\": 996633412,\r\n    \"website\": \"www.field.pe\",\r\n    \"ruc\": 20333456789\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR PROVEEDOR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Sayon\",\r\n    \"telefono\": 996633412,\r\n    \"website\": \"www.sayon.pe\",\r\n    \"ruc\": 20333456789\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/editar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"editar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR PROVEEDOR",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR PROVEEDOR POR ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/buscar/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"buscar",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONSULTAR PROVEEDOR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/proveedor/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"proveedor",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD JEFE",
+			"item": [
+				{
+					"name": "CREAR JEFE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Mateo Salas\",\r\n    \"celular\": \"+51 123456789\",\r\n    \"nacionalidad\": \"Peruano\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR JEFE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Marco Antonio\",\r\n    \"celular\": \"11123156\",\r\n    \"nacionalidad\": \"Aleman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/editar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"editar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR JEFE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR JEFE POR ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/buscar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"buscar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONSULTAR JEFES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREAR JEFE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Mateo Salas\",\r\n    \"celular\": \"+51 123456789\",\r\n    \"nacionalidad\": \"Peruano\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR JEFE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Marco Antonio\",\r\n    \"celular\": \"11123156\",\r\n    \"nacionalidad\": \"Aleman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/editar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"editar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR JEFE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR JEFE POR ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/buscar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"buscar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONSULTAR JEFES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/jefe/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"jefe",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD CATEGORIA",
+			"item": [
+				{
+					"name": "CREAR CATEGORIA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Bebidas\",\r\n    \"jefe\": {\r\n        \"jefe_id\": 7\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR CATEGORIA",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Cosmeticos\",\r\n    \"jefe\": {\r\n        \"jefe_id\": 7\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/editar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"editar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR CATEGORIA",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR CATEGORIA POR ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/buscar/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"buscar",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONSULTAR CATEGORIA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREAR CATEGORIA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Bebidas\",\r\n    \"jefe\": {\r\n        \"jefe_id\": 7\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR CATEGORIA",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Cosmeticos\",\r\n    \"jefe\": {\r\n        \"jefe_id\": 7\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/editar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"editar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR CATEGORIA",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR CATEGORIA POR ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/buscar/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"buscar",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONSULTAR CATEGORIA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/senati/api/categoria/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"senati",
+								"api",
+								"categoria",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CONSULTAR PRODUCTOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/senati/api/producto/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"senati",
+						"api",
+						"producto",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREAR PRODUCTO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Cereal de Quinua\",\r\n        \"marca\": \"Nestle Perú\",\r\n        \"precio\": 15.5,\r\n        \"ffabricacion\": \"2024-01-15\",\r\n        \"fvencimiento\": \"2024-12-15\",\r\n        \"stock\": 500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/senati/api/producto/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"senati",
+						"api",
+						"producto",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACTUALIZAR PRODUCTO",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Cereal de Quinua\",\r\n        \"marca\": \"Nestle Perú\",\r\n        \"precio\": 15.5,\r\n        \"ffabricacion\": \"2024-01-15\",\r\n        \"fvencimiento\": \"2024-12-15\",\r\n        \"stock\": 500,\r\n        \"categoria\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/senati/api/producto/editar/2010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"senati",
+						"api",
+						"producto",
+						"editar",
+						"2010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ELIMINAR PRODUCTO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/senati/api/producto/borrar/2011",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"senati",
+						"api",
+						"producto",
+						"borrar",
+						"2011"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BUSCAR PRODUCTO POR ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/senati/api/producto/buscar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"senati",
+						"api",
+						"producto",
+						"buscar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

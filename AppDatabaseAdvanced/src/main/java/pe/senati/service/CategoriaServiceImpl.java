@@ -46,5 +46,6 @@ public class CategoriaServiceImpl implements CategoriaService
 	public Collection<Categoria> findAll() {
 		return repository.findAll();
 	}
+	
 
 }

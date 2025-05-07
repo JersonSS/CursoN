@@ -8,6 +8,8 @@ import java.util.Set;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -51,12 +53,14 @@ public class Producto implements Serializable
 
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
+    @JsonIgnore
     private Categoria categoria;
 
     @ManyToMany
     @JoinTable(name = "productos_proveedores",
             joinColumns = @JoinColumn(name = "producto_id"),
             inverseJoinColumns = @JoinColumn(name = "proveedor_id"))
+    @JsonIgnore
     private Set<Proveedor> itemsProveedor = new HashSet<>();
 
     public Producto() {}

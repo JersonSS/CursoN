@@ -11,4 +11,6 @@ public interface ProductoService
 	 public abstract void delete(Integer producto_id);
 	 public abstract Producto findById(Integer producto_id);
 	 public abstract Collection<Producto> findAll();
+
+	 public abstract Collection<Object[]> findAll_producto_proveedor();
 }

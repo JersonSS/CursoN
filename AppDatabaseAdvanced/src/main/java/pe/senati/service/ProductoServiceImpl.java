@@ -48,4 +48,11 @@ public class ProductoServiceImpl implements ProductoService
 		return repository.findAll();
 	}
 
+	@Override
+	public Collection<Object[]> findAll_producto_proveedor() {
+		return repository.findAll_producto_proveedor();
+	}
+
+	
+
 }

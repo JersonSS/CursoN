@@ -64,7 +64,7 @@ public class CategoriaRestController
 
         if (categoriaDb != null) 
         {
-            categoriaService.delete(categoria_id);
+            categoriaService.delete2(categoria_id);
             return new ResponseEntity<>("¡Categoria Eliminado!", HttpStatus.OK);
         }
 

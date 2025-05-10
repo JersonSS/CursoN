@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.Producto;
+import pe.senati.mapper.ProductoMapper;
 import pe.senati.service.ProductoService;
+import pe.senati.util.UtilMapper;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -33,7 +36,9 @@ public class ProductoRestController
     public ResponseEntity<?> listar_GET()
     {
         Collection<Producto> list= productoService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Collection<ProductoMapper> listMapper = UtilMapper.convertToProductos(list); 
+
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
     @PostMapping("/registrar")

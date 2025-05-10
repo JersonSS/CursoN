@@ -53,7 +53,6 @@ public class Producto implements Serializable
 
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
-    @JsonIgnore
     private Categoria categoria;
 
     @ManyToMany
@@ -76,6 +75,9 @@ public class Producto implements Serializable
         this.stock = stock;
     }
 
+    public void addProveedor(Proveedor proveedor){
+        itemsProveedor.add(proveedor);
+    }
 
     public Integer getProducto_id() {
         return producto_id;

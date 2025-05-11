@@ -2,15 +2,23 @@ package pe.senati.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,15 +34,6 @@ public class Libro implements Serializable
 
     @Column
     private String titulo;
-
-    @Column
-    private String autor;
-    
-    @Column
-    private String editorial;
-    
-    @Column
-    private String genero;
 
     @Column
     private Boolean digital; 
@@ -57,16 +56,30 @@ public class Libro implements Serializable
     @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
     private LocalDate fechaRegistro;
 
+    @ManyToOne
+    @JoinColumn(name = "editorial_id", nullable = false)
+    private Editorial editorial;
+
+    @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL)
+    private List<DetalleVenta> itemsDetalleVentas = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "itemsLibros")
+    private List<Autor> itemsAutores = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(
+        name = "libro_genero",
+        joinColumns = @JoinColumn(name = "libro_id"),
+        inverseJoinColumns = @JoinColumn(name = "genero_id")
+    )
+    private List<Genero> itemsGeneros = new ArrayList<>();
+
     public Libro() {}
 
-    public Libro(Integer libro_id, String titulo, String autor, String editorial, String genero, Boolean digital,
-            Character edicion, Short numeroPaginas, Integer stock, Double precio, LocalDate fechaPublicacion,
-            LocalDate fechaRegistro) {
+    public Libro(Integer libro_id, String titulo, Boolean digital, Character edicion, Short numeroPaginas,
+            Integer stock, Double precio, LocalDate fechaPublicacion, LocalDate fechaRegistro) {
         this.libro_id = libro_id;
         this.titulo = titulo;
-        this.autor = autor;
-        this.editorial = editorial;
-        this.genero = genero;
         this.digital = digital;
         this.edicion = edicion;
         this.numeroPaginas = numeroPaginas;
@@ -90,30 +103,6 @@ public class Libro implements Serializable
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-
-    public String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
     }
 
     public Boolean getDigital() {
@@ -172,6 +161,36 @@ public class Libro implements Serializable
         this.fechaRegistro = fechaRegistro;
     }
 
-    
+    public Editorial getEditorial() {
+        return editorial;
+    }
 
+    public void setEditorial(Editorial editorial) {
+        this.editorial = editorial;
+    }
+
+    public List<DetalleVenta> getItemsDetalleVentas() {
+        return itemsDetalleVentas;
+    }
+
+    public void setItemsDetalleVentas(List<DetalleVenta> itemsDetalleVentas) {
+        this.itemsDetalleVentas = itemsDetalleVentas;
+    }
+
+    public List<Autor> getItemsAutores() {
+        return itemsAutores;
+    }
+
+    public void setItemsAutores(List<Autor> itemsAutores) {
+        this.itemsAutores = itemsAutores;
+    }
+
+    public List<Genero> getItemsGeneros() {
+        return itemsGeneros;
+    }
+
+    public void setItemsGeneros(List<Genero> itemsGeneros) {
+        this.itemsGeneros = itemsGeneros;
+    }
+    
 }

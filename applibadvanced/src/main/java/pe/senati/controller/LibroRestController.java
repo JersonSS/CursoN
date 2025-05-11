@@ -50,9 +50,6 @@ public class LibroRestController
         if (libroDb != null) 
         {
             libroDb.setTitulo(libro.getTitulo());
-            libroDb.setAutor(libro.getAutor());
-            libroDb.setEditorial(libro.getEditorial());
-            libroDb.setGenero(libro.getGenero());
             libroDb.setDigital(libro.getDigital());
             libroDb.setEdicion(libro.getEdicion());
             libroDb.setNumeroPaginas(libro.getNumeroPaginas());

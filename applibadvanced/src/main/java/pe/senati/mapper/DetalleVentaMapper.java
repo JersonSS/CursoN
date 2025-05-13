@@ -2,7 +2,7 @@ package pe.senati.mapper;
 
 import pe.senati.entity.DetalleVenta;
 
-public class DetallaVentaMapper 
+public class DetalleVentaMapper 
 {
     private Integer detalle_id;
     private Integer cantidad;
@@ -11,9 +11,9 @@ public class DetallaVentaMapper
     private Integer venta_id;
     private Integer libro_id;
 
-    public DetallaVentaMapper() {}
+    public DetalleVentaMapper() {}
 
-    public DetallaVentaMapper(Integer detalle_id, Integer cantidad, Integer precioUnitario, Double subtotal,
+    public DetalleVentaMapper(Integer detalle_id, Integer cantidad, Integer precioUnitario, Double subtotal,
             Integer venta_id, Integer libro_id) {
         this.detalle_id = detalle_id;
         this.cantidad = cantidad;
@@ -23,7 +23,7 @@ public class DetallaVentaMapper
         this.libro_id = libro_id;
     }
 
-    public DetallaVentaMapper(DetalleVenta detalleVenta) {
+    public DetalleVentaMapper(DetalleVenta detalleVenta) {
         this(detalleVenta.getDetalle_id(), detalleVenta.getCantidad(), detalleVenta.getPrecioUnitario(), detalleVenta.getSubtotal(), 
             detalleVenta.getVenta().getVenta_id(), detalleVenta.getLibro().getLibro_id());
     }

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.Autor;
 import pe.senati.service.AutorService;
+import pe.senati.util.UtilMapper;
 
 import java.util.Collection;
 
@@ -35,6 +36,11 @@ public class AutorRestController
     {
         Collection<Autor> list= autorService.findAll();
         return new ResponseEntity<>(list, HttpStatus.OK);
+
+        // example
+        //  Collection<Categoria> list= categoriaService.findAll();
+        // Collection<CategoriaMapper>listMapper = UtilMapper.convertToCategorias(list);
+        // return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
      @PostMapping("/registrar")

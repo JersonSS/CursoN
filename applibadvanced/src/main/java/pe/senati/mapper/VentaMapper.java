@@ -8,15 +8,16 @@ public class VentaMapper
 {
     private Integer venta_id;
     private Double total;
-    private LocalDate fecha_venta;
+    private LocalDate fechaVenta;
     private Integer cliente_id;
 
     public VentaMapper() {}
 
-    public VentaMapper(Integer venta_id, Double total, LocalDate fecha_venta, Integer cliente_id) {
+
+    public VentaMapper(Integer venta_id, Double total, LocalDate fechaVenta, Integer cliente_id) {
         this.venta_id = venta_id;
         this.total = total;
-        this.fecha_venta = fecha_venta;
+        this.fechaVenta = fechaVenta;
         this.cliente_id = cliente_id;
     }
 
@@ -28,33 +29,42 @@ public class VentaMapper
         return venta_id;
     }
 
+
     public void setVenta_id(Integer venta_id) {
         this.venta_id = venta_id;
     }
+
 
     public Double getTotal() {
         return total;
     }
 
+
     public void setTotal(Double total) {
         this.total = total;
     }
 
-    public LocalDate getFecha_venta() {
-        return fecha_venta;
+
+    public LocalDate getFechaVenta() {
+        return fechaVenta;
     }
 
-    public void setFecha_venta(LocalDate fecha_venta) {
-        this.fecha_venta = fecha_venta;
+
+    public void setFechaVenta(LocalDate fechaVenta) {
+        this.fechaVenta = fechaVenta;
     }
+
 
     public Integer getCliente_id() {
         return cliente_id;
     }
 
+
     public void setCliente_id(Integer cliente_id) {
         this.cliente_id = cliente_id;
     }
+
+    
 
     
 }

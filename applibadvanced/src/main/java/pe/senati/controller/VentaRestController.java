@@ -54,6 +54,7 @@ public class VentaRestController
         {
             ventaDb.setTotal(venta.getTotal());
             ventaDb.setFechaVenta(venta.getFechaVenta());
+            ventaDb.setCliente(venta.getCliente());
             
             ventaService.update(ventaDb);
             return new ResponseEntity<>("¡Venta actualizado!", HttpStatus.OK);

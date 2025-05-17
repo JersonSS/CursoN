@@ -60,6 +60,7 @@ public class LibroRestController
             libroDb.setPrecio(libro.getPrecio());
             libroDb.setFechaPublicacion(libro.getFechaPublicacion());
             libroDb.setFechaRegistro(libro.getFechaRegistro());
+            libroDb.setEditorial(libro.getEditorial());
             
             libroService.update(libroDb);
             return new ResponseEntity<>("¡Libro actualizado!", HttpStatus.OK);

@@ -54,6 +54,7 @@ public class CuentaClienteRestController
         {
             cuentaClienteDb.setUsuario(cuentaCliente.getUsuario());
             cuentaClienteDb.setClave(cuentaCliente.getClave());
+            cuentaClienteDb.setCliente(cuentaCliente.getCliente());
             
             cuentaClienteService.update(cuentaClienteDb);
             return new ResponseEntity<>("¡CuentaCliente actualizado!", HttpStatus.OK);

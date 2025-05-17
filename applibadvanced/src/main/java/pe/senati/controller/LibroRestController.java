@@ -4,7 +4,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.Libro;
+import pe.senati.mapper.LibroMapper;
 import pe.senati.service.LibroService;
+import pe.senati.util.UtilMapper;
 
 import java.util.Collection;
 
@@ -34,7 +36,8 @@ public class LibroRestController
     public  ResponseEntity<?> listar_GET() 
     {
         Collection<Libro> list= libroService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Collection<LibroMapper> listMapper = UtilMapper.convertToLibros(list);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
      @PostMapping("/registrar")
@@ -82,10 +85,11 @@ public class LibroRestController
     public ResponseEntity<?> buscar_GET(@PathVariable Integer libro_id) {
         
         Libro libroDb = libroService.findById(libro_id);
+        LibroMapper libroMapper = new LibroMapper(libroDb);
 
         if (libroDb != null) 
         {
-            return new ResponseEntity<>(libroDb, HttpStatus.FOUND);
+            return new ResponseEntity<>(libroMapper, HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>("¡Error, libro no encontrado!", HttpStatus.NOT_FOUND);

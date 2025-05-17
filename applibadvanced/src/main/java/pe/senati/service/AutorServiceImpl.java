@@ -48,5 +48,10 @@ public class AutorServiceImpl implements AutorService
     public Collection<Autor> findAll() {
         return repository.findAll();
     }
-   
+
+    @Override
+    public Collection<Object[]> findAll_autor_libro() {
+        return repository.findAll_autor_libro();
+    }
+
 }

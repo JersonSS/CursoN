@@ -34,7 +34,7 @@ public class CategoriaRestController
     {
         Collection<Categoria> list= categoriaService.findAll();
         Collection<CategoriaMapper>listMapper = UtilMapper.convertToCategorias(list);
-        return new ResponseEntity<>(listMapper, HttpStatus.OK);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK); 
     }
 
     @PostMapping("/registrar")

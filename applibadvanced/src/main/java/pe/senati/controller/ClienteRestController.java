@@ -4,7 +4,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.Cliente;
+import pe.senati.mapper.ClienteMapper;
 import pe.senati.service.ClienteService;
+import pe.senati.util.UtilMapper;
 
 import java.util.Collection;
 
@@ -33,8 +35,9 @@ public class ClienteRestController
     @GetMapping("/listar")
     public  ResponseEntity<?> listar_GET() 
     {
-        Collection<Cliente> list= clienteService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Collection<Cliente> list = clienteService.findAll();
+        Collection<ClienteMapper> listMapper = UtilMapper.convertToClientes(list);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
      @PostMapping("/registrar")
@@ -82,9 +85,11 @@ public class ClienteRestController
         
         Cliente clienteDb = clienteService.findById(cliente_id);
 
+        ClienteMapper clienteMapper = new ClienteMapper(clienteDb);
+
         if (clienteDb != null) 
         {
-            return new ResponseEntity<>(clienteDb, HttpStatus.FOUND);
+            return new ResponseEntity<>(clienteMapper, HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>("¡Error, cliente no encontrado!", HttpStatus.NOT_FOUND);

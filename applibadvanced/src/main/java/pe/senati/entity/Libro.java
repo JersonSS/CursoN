@@ -89,6 +89,10 @@ public class Libro implements Serializable
         this.fechaRegistro = fechaRegistro;
     }
 
+    public void addGenero(Genero genero) {
+        itemsGeneros.add(genero); 
+    }
+
     public Integer getLibro_id() {
         return libro_id;
     }

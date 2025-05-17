@@ -11,12 +11,14 @@ import pe.senati.entity.Editorial;
 import pe.senati.entity.Genero;
 import pe.senati.entity.Libro;
 import pe.senati.entity.Venta;
+import pe.senati.mapper.AutorLibroMapper;
 import pe.senati.mapper.AutorMapper;
 import pe.senati.mapper.ClienteMapper;
 import pe.senati.mapper.CuentaClienteMapper;
 import pe.senati.mapper.DetalleVentaMapper;
 import pe.senati.mapper.EditorialMapper;
 import pe.senati.mapper.GeneroMapper;
+import pe.senati.mapper.LibroGeneroMapper;
 import pe.senati.mapper.LibroMapper;
 import pe.senati.mapper.VentaMapper;
 
@@ -93,7 +95,7 @@ public class UtilMapper
         return mapper;
     }
 
-    public static Collection<GeneroMapper> convertToGeneroes(Collection<Genero> collection)
+    public static Collection<GeneroMapper> convertToGeneros(Collection<Genero> collection)
     {
         Collection<GeneroMapper> mapper = new ArrayList<>();
 
@@ -107,7 +109,7 @@ public class UtilMapper
         return mapper;
     }
 
-    public static Collection<LibroMapper> convertToLibroes(Collection<Libro> collection)
+    public static Collection<LibroMapper> convertToLibros(Collection<Libro> collection)
     {
         Collection<LibroMapper> mapper = new ArrayList<>();
 
@@ -121,7 +123,7 @@ public class UtilMapper
         return mapper;
     }
 
-    public static Collection<VentaMapper> convertToVentaes(Collection<Venta> collection)
+    public static Collection<VentaMapper> convertToVentas(Collection<Venta> collection)
     {
         Collection<VentaMapper> mapper = new ArrayList<>();
 
@@ -135,33 +137,56 @@ public class UtilMapper
         return mapper;
     }
 
-    // proximo code de mapeo de relacion mucho a uchos
 
-    // example
-    // public static Collection<ProductoProveedorMapper> convertToProductosProveedores(Collection<Object[]> collection) 
-	// {
-	// 	Collection<ProductoProveedorMapper> mapper = new ArrayList<>();
+    public static Collection<LibroGeneroMapper> convertToLibroGeneros(Collection<Object[]> collection) 
+	{
+		Collection<LibroGeneroMapper> mapper = new ArrayList<>();
 		
-	// 	for(Object[] object:collection) 
-	// 	{
-	// 		ProductoProveedorMapper ppMapper = new ProductoProveedorMapper();
+		for(Object[] object:collection) 
+		{
+			LibroGeneroMapper libroGeneroMapper = new LibroGeneroMapper();
 			
-	// 		Integer producto_id = Integer.parseInt(String.valueOf(object[0]));
-	// 		ppMapper.setProducto_id(producto_id);
+			Integer libro_id = Integer.parseInt(String.valueOf(object[0]));
+			libroGeneroMapper.setLibro_id(libro_id);
 
-	// 		String producto = String.valueOf(object[1]);
-	// 		ppMapper.setProducto(producto);
+			String libro = String.valueOf(object[1]);
+			libroGeneroMapper.setLibro(libro);
 
-	// 		Integer proveedor_id = Integer.parseInt(String.valueOf(object[2]));
-	// 		ppMapper.setProveedor_id(proveedor_id);
+			Integer genero_id = Integer.parseInt(String.valueOf(object[2]));
+			libroGeneroMapper.setGenero_id(genero_id);
 
-	// 		String proveedor = String.valueOf(object[3]);
-	// 		ppMapper.setProveedor(proveedor);
+			String genero = String.valueOf(object[3]);
+			libroGeneroMapper.setGenero(genero);
 
-	// 		mapper.add(ppMapper);
-	// 	}
+			mapper.add(libroGeneroMapper);
+		}
 		
-	// 	return mapper;
-	//}
+		return mapper;
+	}
+
+    public static Collection<AutorLibroMapper> convertToAutoresLibros(Collection<Object[]> collection)
+    {
+        Collection<AutorLibroMapper> mapper = new ArrayList<>();
+
+        for(Object[] object:collection)
+        {
+            AutorLibroMapper autorLibroMapper = new AutorLibroMapper();
+
+            Integer autor_id = Integer.parseInt(String.valueOf(object[0]));
+            autorLibroMapper.setAutor_id(autor_id);
+
+            String autor = String.valueOf(object[1]);
+            autorLibroMapper.setAutor(autor);
+
+            Integer libro_id = Integer.parseInt(String.valueOf(object[2]));
+            autorLibroMapper.setLibro_id(libro_id);
+
+            String libro = String.valueOf(object[3]);
+            autorLibroMapper.setLibro(libro);
+
+            mapper.add(autorLibroMapper);
+        }
+        return mapper;
+    }
 
 }

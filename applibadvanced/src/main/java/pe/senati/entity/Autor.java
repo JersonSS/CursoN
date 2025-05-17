@@ -60,6 +60,9 @@ public class Autor implements Serializable
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    public void addLibro(Libro libro) {
+        itemsLibros.add(libro);
+    }
 
     public Integer getAutor_id() {
         return autor_id;

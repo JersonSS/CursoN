@@ -4,7 +4,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.CuentaCliente;
+import pe.senati.mapper.CuentaClienteMapper;
 import pe.senati.service.CuentaClienteService;
+import pe.senati.util.UtilMapper;
 
 import java.util.Collection;
 
@@ -34,7 +36,8 @@ public class CuentaClienteRestController
     public  ResponseEntity<?> listar_GET() 
     {
         Collection<CuentaCliente> list= cuentaClienteService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Collection<CuentaClienteMapper> listMapper = UtilMapper.convertToCuentaClientes(list);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
      @PostMapping("/registrar")
@@ -49,7 +52,7 @@ public class CuentaClienteRestController
 
         if (cuentaClienteDb != null) 
         {
-            cuentaClienteDb.setUsuario(cuentaClienteDb.getUsuario());
+            cuentaClienteDb.setUsuario(cuentaCliente.getUsuario());
             cuentaClienteDb.setClave(cuentaCliente.getClave());
             
             cuentaClienteService.update(cuentaClienteDb);
@@ -76,10 +79,11 @@ public class CuentaClienteRestController
     public ResponseEntity<?> buscar_GET(@PathVariable Integer cuentaCliente_id) {
         
         CuentaCliente cuentaClienteDb = cuentaClienteService.findById(cuentaCliente_id);
+        CuentaClienteMapper cuentaClienteMapper = new CuentaClienteMapper(cuentaClienteDb);
 
         if (cuentaClienteDb != null) 
         {
-            return new ResponseEntity<>(cuentaClienteDb, HttpStatus.FOUND);
+            return new ResponseEntity<>(cuentaClienteMapper, HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>("¡Error, cuentaCliente no encontrado!", HttpStatus.NOT_FOUND);

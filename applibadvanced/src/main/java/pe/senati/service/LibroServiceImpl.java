@@ -48,5 +48,9 @@ public class LibroServiceImpl implements LibroService
     public Collection<Libro> findAll() {
         return repository.findAll();
     }
-   
+
+    @Override
+    public Collection<Object[]> findAll_libro_genero() {
+        return repository.findAll_libro_genero();
+    }
 }

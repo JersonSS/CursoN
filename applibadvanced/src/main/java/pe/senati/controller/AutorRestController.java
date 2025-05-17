@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.Autor;
+import pe.senati.mapper.AutorMapper;
 import pe.senati.service.AutorService;
 import pe.senati.util.UtilMapper;
 
@@ -34,13 +35,9 @@ public class AutorRestController
     @GetMapping("/listar")
     public  ResponseEntity<?> listar_GET() 
     {
-        Collection<Autor> list= autorService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
-
-        // example
-        //  Collection<Categoria> list= categoriaService.findAll();
-        // Collection<CategoriaMapper>listMapper = UtilMapper.convertToCategorias(list);
-        // return new ResponseEntity<>(listMapper, HttpStatus.OK);
+        Collection<Autor> list = autorService.findAll();
+        Collection<AutorMapper> listMapper = UtilMapper.convertToAutores(list);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
      @PostMapping("/registrar")
@@ -84,10 +81,11 @@ public class AutorRestController
     public ResponseEntity<?> buscar_GET(@PathVariable Integer autor_id) {
         
         Autor autorDb = autorService.findById(autor_id);
+        AutorMapper autorMapper = new AutorMapper(autorDb);
 
         if (autorDb != null) 
         {
-            return new ResponseEntity<>(autorDb, HttpStatus.FOUND);
+            return new ResponseEntity<>(autorMapper, HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>("¡Error, autor no encontrado!", HttpStatus.NOT_FOUND);

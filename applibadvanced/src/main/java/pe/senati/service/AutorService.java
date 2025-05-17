@@ -11,4 +11,6 @@ public interface AutorService
     public abstract void delete(Integer autor_id);
     public abstract Autor findById(Integer autor_id);
     public abstract Collection<Autor> findAll();
+
+    public abstract Collection<Object[]> findAll_autor_libro();
 }

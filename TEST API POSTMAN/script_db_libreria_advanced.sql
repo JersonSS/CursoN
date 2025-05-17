@@ -34,7 +34,6 @@ CREATE TABLE generos (
 CREATE TABLE libros (
     libro_id          INT PRIMARY KEY AUTO_INCREMENT,
     titulo            VARCHAR(255)    NOT NULL,
-    genero			VARCHAR(255),	
     digital           BIT(1)          NOT NULL DEFAULT 0,
     edicion           CHAR(1),
     fecha_publicacion DATE,
@@ -91,7 +90,7 @@ CREATE TABLE clientes (
     nombre      VARCHAR(255) NOT NULL,
     apellido    VARCHAR(255) NOT NULL,
     correo      VARCHAR(255) NOT NULL UNIQUE,
-    fechaNacimiento DATE NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
     telefono    VARCHAR(15),
     direccion   VARCHAR(255)
 );
@@ -105,7 +104,7 @@ CREATE TABLE cuenta_clientes (
     cliente_id INT NOT NULL UNIQUE,
     usuario    VARCHAR(100) NOT NULL UNIQUE,
     clave      VARCHAR(255) NOT NULL,
-    fechaRegistro DATE, -- automatico zona horaria del sistema
+    fecha_registro DATE, -- automatico zona horaria del sistema
     FOREIGN KEY (cliente_id)
       REFERENCES Cliente(cliente_id)
       ON UPDATE CASCADE

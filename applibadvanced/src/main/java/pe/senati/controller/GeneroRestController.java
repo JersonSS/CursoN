@@ -4,7 +4,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.Genero;
+import pe.senati.mapper.GeneroMapper;
 import pe.senati.service.GeneroService;
+import pe.senati.util.UtilMapper;
 
 import java.util.Collection;
 
@@ -34,7 +36,8 @@ public class GeneroRestController
     public  ResponseEntity<?> listar_GET() 
     {
         Collection<Genero> list= generoService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Collection<GeneroMapper> listMapper = UtilMapper.convertToGeneros(list);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
      @PostMapping("/registrar")
@@ -76,10 +79,11 @@ public class GeneroRestController
     public ResponseEntity<?> buscar_GET(@PathVariable Integer genero_id) {
         
         Genero generoDb = generoService.findById(genero_id);
+        GeneroMapper generoMapper = new GeneroMapper(generoDb);
 
         if (generoDb != null) 
         {
-            return new ResponseEntity<>(generoDb, HttpStatus.FOUND);
+            return new ResponseEntity<>(generoMapper, HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>("¡Error, genero no encontrado!", HttpStatus.NOT_FOUND);

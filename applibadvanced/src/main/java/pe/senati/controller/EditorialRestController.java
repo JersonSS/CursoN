@@ -4,7 +4,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.Editorial;
+import pe.senati.mapper.EditorialMapper;
 import pe.senati.service.EditorialService;
+import pe.senati.util.UtilMapper;
 
 import java.util.Collection;
 
@@ -34,7 +36,8 @@ public class EditorialRestController
     public  ResponseEntity<?> listar_GET() 
     {
         Collection<Editorial> list= editorialService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Collection<EditorialMapper> listMapper = UtilMapper.convertToEditoriales(list);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
      @PostMapping("/registrar")
@@ -76,10 +79,11 @@ public class EditorialRestController
     public ResponseEntity<?> buscar_GET(@PathVariable Integer editorial_id) {
         
         Editorial editorialDb = editorialService.findById(editorial_id);
+        EditorialMapper editorialMapper = new EditorialMapper(editorialDb);
 
         if (editorialDb != null) 
         {
-            return new ResponseEntity<>(editorialDb, HttpStatus.FOUND);
+            return new ResponseEntity<>(editorialMapper, HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>("¡Error, editorial no encontrado!", HttpStatus.NOT_FOUND);

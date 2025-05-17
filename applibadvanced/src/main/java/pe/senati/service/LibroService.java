@@ -11,4 +11,6 @@ public interface LibroService
     public abstract void delete(Integer libro_id);
     public abstract Libro findById(Integer libro_id);
     public abstract Collection<Libro> findAll();
+
+    public abstract Collection<Object[]> findAll_libro_genero();
 }

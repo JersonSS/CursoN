@@ -4,7 +4,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.senati.entity.DetalleVenta;
+import pe.senati.mapper.DetalleVentaMapper;
 import pe.senati.service.DetalleVentaService;
+import pe.senati.util.UtilMapper;
 
 import java.util.Collection;
 
@@ -34,7 +36,8 @@ public class DetalleVentaRestController
     public  ResponseEntity<?> listar_GET() 
     {
         Collection<DetalleVenta> list= detalleVentaService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Collection<DetalleVentaMapper> listMapper = UtilMapper.convertToDetalleVentas(list);
+        return new ResponseEntity<>(listMapper, HttpStatus.OK);
     }
 
      @PostMapping("/registrar")
@@ -77,10 +80,11 @@ public class DetalleVentaRestController
     public ResponseEntity<?> buscar_GET(@PathVariable Integer detalleVenta_id) {
         
         DetalleVenta detalleVentaDb = detalleVentaService.findById(detalleVenta_id);
+        DetalleVentaMapper detalleVentaMapper = new DetalleVentaMapper(detalleVentaDb);
 
         if (detalleVentaDb != null) 
         {
-            return new ResponseEntity<>(detalleVentaDb, HttpStatus.FOUND);
+            return new ResponseEntity<>(detalleVentaMapper, HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>("¡Error, detalleVenta no encontrado!", HttpStatus.NOT_FOUND);

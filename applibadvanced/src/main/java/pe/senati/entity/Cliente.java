@@ -5,6 +5,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +40,7 @@ public class Cliente implements Serializable
     @Column(unique = true, nullable = false)
     private String correo;
 
-    @Column
+    @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
     private LocalDate fechaNacimiento;
 
     @Column

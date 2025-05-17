@@ -55,7 +55,9 @@ public class DetalleVentaRestController
             detalleVentaDb.setCantidad(detalleVenta.getCantidad());
             detalleVentaDb.setPrecioUnitario(detalleVenta.getPrecioUnitario());
             detalleVentaDb.setSubtotal(detalleVenta.getSubtotal());
-            
+            detalleVentaDb.setVenta(detalleVenta.getVenta());
+            detalleVentaDb.setLibro(detalleVenta.getLibro());
+               
             detalleVentaService.update(detalleVentaDb);
             return new ResponseEntity<>("¡DetalleVenta actualizado!", HttpStatus.OK);
         }

@@ -1,34 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Registrar Jefe</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>editar</title>
 </head>
 <body>
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1 class="text-center">REGISTRAR JEFES</h1>
-            <form:form action="" method="post" modelAttribute="jefe">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <form:input path="nombre" class="form-control" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="celular">Celular</label>
-                    <form:input path="celular" class="form-control" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="nacionalidad">Nacionalidad</label>
-                    <form:input path="nacionalidad" class="form-control" required="required" />
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Registrar</button>
-                <button type="reset" class="btn btn-danger btn-block">Cancelar</button>
-            </form:form>
-        </div>
-    </div>
-</div>
+	<div align="center">
+		<h3>¡Tienda - Todos vuelven!</h3>
+		<div style="color: green; padding: 5px 0px 5px 0px;">Editar Jefe</div>
+		
+		<!-- Spring Form -->
+		<form:form name="" method="post" modelAttribute="jefe">
+			Jefe ID: <form:input type="text" path="jefe_id" readonly="true"/> <br>
+			Nombre: <form:input type="text" path="nombre"/> <br>
+			Celular: <form:input type="text" path="celular"/> <br>
+			Nacionalidad: <form:input type="text" path="nacionalidad"/> <br><br>
+			
+			<button type="submit">Guardar</button>
+			<button type="button" onclick="window.location.href='/senati/jefe/listar'">Cancelar</button>
+		</form:form>
+	</div>
 </body>
 </html>

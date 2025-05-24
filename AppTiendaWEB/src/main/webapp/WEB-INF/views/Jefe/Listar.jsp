@@ -30,7 +30,7 @@
                     <td>${jefe.nacionalidad}</td>
                     <td>${jefe.celular}</td>
                     <td>
-                        <a href="editar/${jefe.jefe_id}">Editar</a>
+                        <a href="/senati/jefe/editar/${jefe.jefe_id}">Editar</a>
                         <a href="eliminar/${jefe.jefe_id}">Eliminar</a>
                     </td>
                 </tr>

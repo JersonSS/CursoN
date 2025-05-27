@@ -31,7 +31,7 @@
                     <td>${jefe.celular}</td>
                     <td>
                         <a href="/senati/jefe/editar/${jefe.jefe_id}">Editar</a>
-                        <a href="eliminar/${jefe.jefe_id}">Eliminar</a>
+                        <a href="/senati/jefe/borrar/${jefe.jefe_id}">Borrar</a>
                     </td>
                 </tr>
             </c:forEach>

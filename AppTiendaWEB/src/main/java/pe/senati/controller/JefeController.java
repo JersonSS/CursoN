@@ -32,7 +32,8 @@ public class JefeController
     }
 
     @GetMapping("/registrar")
-    public String registrar_GET(Model model) {
+    public String registrar_GET(Model model) 
+    {
 
         Jefe jefeNull = new Jefe();
         model.addAttribute("jefe", jefeNull);
@@ -41,29 +42,39 @@ public class JefeController
     }
 
     @PostMapping("/registrar")
-    public String registrar_POST(Jefe jefe) {
-        
-        jefeService.insert(jefe);
-
+    public String registrar_POST(Jefe jefe) 
+    {
+        jefeService.insert(jefe);     
         return "redirect:/jefe/listar";
     }
 
     @GetMapping("/editar/{jefe_id}")
-    public String editar_GET(Model model,@PathVariable Integer jefe_id) {
+    public String editar_GET(Model model,@PathVariable Integer jefe_id) 
+    {
         Jefe jefeModel = jefeService.findById(jefe_id);
         model.addAttribute("jefe", jefeModel);
         return "Jefe/Editar";
     }
 
     @PostMapping("/editar/{jefe_id}")
-    public String editar_POST(Jefe jefe) {
+    public String editar_POST(Jefe jefe) 
+    {
         jefeService.update(jefe);
-        
         return "redirect:/jefe/listar";
     }
-    
-    
-    
-    
-    
+
+    @GetMapping("/borrar/{jefe_id}")
+    public String borrar_GET(Model model,@PathVariable Integer jefe_id) 
+    {
+        Jefe jefeModel = jefeService.findById(jefe_id);
+        model.addAttribute("jefe", jefeModel);
+        return "Jefe/Borrar";
+    }
+
+    @PostMapping("/borrar/{jefe_id}")
+    public String borrar_POST(Jefe jefe) 
+    {
+        jefeService.delete(jefe.getJefe_id());
+        return "redirect:/jefe/listar";
+    }
 }

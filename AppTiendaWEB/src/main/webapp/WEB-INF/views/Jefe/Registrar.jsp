@@ -11,7 +11,7 @@
     <div align= "center">
         <h1>¡Tienda - Todos vuelven!</h1>
 
-        </div>Registrar Jefe</div>
+        <h1>Registrar Jefe</h1>
         <form:form action="" method="post" modelAttribute="jefe"> 
             Nombre: <form:input type="text" path="nombre"/> <br> 
             Celular: <form:input type="text" path="celular"/> <br> 

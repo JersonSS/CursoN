@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ public class Jefe implements Serializable
     @Column
     private String nacionalidad;
 
-    @OneToOne(mappedBy = "jefe")// jefe(clase) lo que se va enviar como foraneo a categoria
+    @OneToOne(mappedBy = "jefe", cascade = CascadeType.REMOVE, orphanRemoval = true)// jefe(clase) lo que se va enviar como foraneo a categoria
     @JsonIgnore
     private Categoria categoria;
 

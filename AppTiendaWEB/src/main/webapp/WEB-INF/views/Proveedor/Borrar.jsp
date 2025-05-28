@@ -21,7 +21,7 @@
             Proveedor ID: <form:input type="text" path="proveedor_id" readonly="true"/> <br>
             Nombre: <form:input type="text" path="nombre" readonly="true"/> <br>
             <button type="submit">Confirmar</button>
-            <button type="button" onclick="window.location.href='/proveedor/listar'">Cancelar</button>
+            <button type="button" onclick="window.location.href='/senati/proveedor/listar'">Cancelar</button>
         </form:form>
     </div>
 </body>

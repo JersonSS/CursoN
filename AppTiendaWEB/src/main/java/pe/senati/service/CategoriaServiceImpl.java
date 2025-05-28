@@ -47,11 +47,12 @@ public class CategoriaServiceImpl implements CategoriaService
 		return repository.findAll();
 	}
 	
+
 	@Override
-	@Transactional
-	public void delete2(Integer categoria_id) {
-		repository.delete2(categoria_id);
+	public int isDelete(Integer categoria_id) {
+		return repository.isDelete(categoria_id);
 	}
 
+	
 
 }

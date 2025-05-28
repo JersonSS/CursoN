@@ -20,8 +20,9 @@
             Proveedor ID: <form:input type="text" path="proveedor_id" readonly="true"/> <br><br>
 
             Nombre: <form:input type="text" path="nombre"/> <br><br>
+            Telefono: <form:input type="text" path="telefono"/> <br><br>
+            website: <form:input type="text" path="website"/> <br><br>
             RUC: <form:input type="text" path="ruc"/> <br><br>
-            Dirección: <form:input type="text" path="direccion"/> <br><br>
 
             <button type="submit">Guardar</button>
             <button type="button" onclick="window.location.href='/senati/proveedor/listar'">Cancelar</button>

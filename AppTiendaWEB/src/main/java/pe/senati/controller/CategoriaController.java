@@ -66,10 +66,17 @@ public class CategoriaController {
 
     @GetMapping("/borrar/{categoria_id}")
     public String borrar_GET(Model model, @PathVariable Integer categoria_id) {
-        Categoria categoriaModel = categoriaService.findById(categoria_id);
-        model.addAttribute("categoria", categoriaModel);
 
-        return "Categoria/Borrar";
+        int count = categoriaService.isDelete(categoria_id);
+
+        if(count==0){
+            Categoria categoriaModel = categoriaService.findById(categoria_id);
+            model.addAttribute("categoria", categoriaModel);
+            return "Categoria/Borrar";
+
+        }
+
+        return "Categoria/Error";
     }
 
     @PostMapping("/borrar/{categoria_id}")

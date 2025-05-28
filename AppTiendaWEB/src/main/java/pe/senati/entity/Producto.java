@@ -42,10 +42,10 @@ public class Producto implements Serializable
 	@Column
     private Double precio;
     
-    @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd", iso = ISO.DATE)
     private LocalDate ffabricacion;
     
-    @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd", iso = ISO.DATE)
     private LocalDate fvencimiento;
     
     @Column

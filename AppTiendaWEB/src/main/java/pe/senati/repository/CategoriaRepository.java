@@ -9,6 +9,9 @@ import pe.senati.entity.Categoria;
 @Repository
 public interface CategoriaRepository  extends JpaRepository<Categoria, Integer>
 {
-	@Query(value = "delete from categorias where categoria_id = :categoria_id", nativeQuery = true)
-	public void delete2(Integer categoria_id);
+	@Query(value = "select count(*) \"count\" \n" + //
+				"from categorias c \n" + //
+				"inner join productos p on c.categoria_id=p.categoria_id\n" + //
+				"where c.categoria_id=:categoria_id", nativeQuery = true)
+	public abstract int isDelete(Integer categoria_id);
 }

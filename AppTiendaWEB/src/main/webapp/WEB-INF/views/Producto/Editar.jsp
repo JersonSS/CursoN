@@ -14,13 +14,21 @@
         <div style="color: red; padding: 5px 0px 5px 0px;">Editar Producto</div>
         
         <!-- Spring Form -->
-        <form:form method="post" action="/producto/editar" modelAttribute="producto">
+        <form:form method="post" action="" modelAttribute="producto">
             <form:hidden path="producto_id"/>
-            Nombre: <form:input type="text" path="nombre"/> <br>
+             Nombre: <form:input type="text" path="nombre"/> <br>
+            Marca: <form:input type="text" path="marca"/> <br>
             Precio: <form:input type="text" path="precio"/> <br>
+            Fecha de Fabricación: <form:input type="date" path="ffabricacion"/> <br>
+            Fecha de Vencimiento: <form:input type="date" path="fvencimiento"/> <br>
             Stock: <form:input type="text" path="stock"/> <br>
+
+            Categoria: <form:select path="categoria.categoria_id">
+                    <form:options items="${bCategorias}" itemValue="categoria_id" itemLabel="descripcion"/>
+            </form:select><br><br>
+
             <button type="submit">Guardar</button>
-            <button type="button" onclick="window.location.href='/producto/listar'">Cancelar</button>
+            <button type="button" onclick="window.location.href='/senati/producto/listar'">Cancelar</button>
         </form:form>
     </div>
 </body>

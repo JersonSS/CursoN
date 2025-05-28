@@ -26,7 +26,7 @@
                 <th>Stock</th>
                 <th>Acciones</th>
             </tr>
-            <c:forEach items="${bProductos}" var="producto">
+            <c:forEach var="producto" items="${bProductos}">
                 <tr>
                     <td>${producto.producto_id}</td>
                     <td>${producto.nombre}</td>
@@ -37,8 +37,8 @@
                     <td>${producto.stock}</td>
                     <td>${producto.categoria.descripcion}</td>
                     <td>
-                        <a href="/producto/editar/${producto.producto_id}">Editar</a>
-                        <a href="/producto/borrar/${producto.producto_id}">Borrar</a>
+                        <a href="/senati/producto/editar/${producto.producto_id}">Editar</a>
+                        <a href="/senati/producto/borrar/${producto.producto_id}">Borrar</a>
                     </td>
                 </tr>
             </c:forEach>

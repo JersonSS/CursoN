@@ -23,7 +23,7 @@
             Precio: <form:input type="text" path="precio" readonly="true"/> <br>
             Stock: <form:input type="text" path="stock" readonly="true"/> <br>
             <button type="submit">Confirmar</button>
-            <button type="button" onclick="window.location.href='/producto/listar'">Cancelar</button>
+            <button type="button" onclick="window.location.href='/senati/producto/listar'">Cancelar</button>
         </form:form>
     </div>
 </body>

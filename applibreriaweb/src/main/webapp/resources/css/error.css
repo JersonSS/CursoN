@@ -1,0 +1,33 @@
+/* Estilos para páginas de error */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+}
+
+h3 {
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #721c24;
+    margin-bottom: 30px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+a:hover {
+    background-color: #2980b9;
+}

@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Registrar Género</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/crear.css">
 </head>
 <body>
     <div align="center">

@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Borrar Venta</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/borrar.css">
 </head>
 <body>
     <div align="center">

@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Listar Editoriales</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/listar.css">
 </head>
 <body>
     <div align="center">

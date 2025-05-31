@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Crear Cuenta de Cliente</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/crear.css">
 </head>
 <body>
     <h2>Crear Cuenta de Cliente</h2>

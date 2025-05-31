@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Editar Detalle de Venta</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/editar.css">
 </head>
 <body>
     <div align="center">

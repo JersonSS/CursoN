@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Listar Detalles de Venta</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/listar.css">
 </head>
 <body>
     <h2>Lista de Detalles de Venta</h2>

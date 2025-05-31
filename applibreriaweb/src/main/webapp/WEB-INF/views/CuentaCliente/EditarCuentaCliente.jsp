@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Editar Cuenta de Cliente</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/editar.css">
 </head>
 <body>
     <h2>Editar Cuenta de Cliente</h2>

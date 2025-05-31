@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Listar Cuentas de Clientes</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/listar.css">
 </head>
 <body>
     <h2>Lista de Cuentas de Clientes</h2>

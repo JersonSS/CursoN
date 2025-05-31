@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>Borrar Cuenta de Cliente</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/borrar.css">
 </head>
 <body>
     <h2>Borrar Cuenta de Cliente</h2>

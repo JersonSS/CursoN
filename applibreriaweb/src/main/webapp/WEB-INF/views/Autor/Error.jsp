@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Error</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/error.css">
 </head>
 <body>
     <h3>¡ERROR!</h3>

@@ -55,9 +55,15 @@ public class GeneroController {
 
     @GetMapping("/borrar/{genero_id}")
     public String borrar_GET(Model model, @PathVariable Integer genero_id) {
-        Genero generoModel = generoService.findById(genero_id);
-        model.addAttribute("genero", generoModel);
-        return "Genero/BorrarGenero";
+        int count = generoService.isDelete(genero_id);
+
+        if(count==0){
+            Genero generoModel = generoService.findById(genero_id);
+            model.addAttribute("genero", generoModel);
+            return "Genero/BorrarGenero";
+        }
+
+        return "Genero/Error";
     }
 
     @PostMapping("/borrar/{genero_id}")

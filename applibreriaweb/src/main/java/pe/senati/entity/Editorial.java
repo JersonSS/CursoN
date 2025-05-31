@@ -29,7 +29,7 @@ public class Editorial implements Serializable
     @Column
     private String pais;
 
-    @OneToMany(mappedBy = "editorial", cascade = CascadeType.ALL)
+    @OneToMany
     private List<Libro> itemslibros = new ArrayList<>();
 
     public Editorial() {}

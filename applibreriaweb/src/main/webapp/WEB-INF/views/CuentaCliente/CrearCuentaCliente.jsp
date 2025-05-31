@@ -11,7 +11,7 @@
     <form:form method="post" action="" modelAttribute="cuentaCliente">
 
         Usuario: <form:input type="text" id="usuario" path="usuario" required="true"/><br>
-        >Clave: <form:input type="password" id="clave" path="clave" required="true"/><br>
+        Clave: <form:input type="password" id="clave" path="clave" required="true"/><br>
         Cliente: <form:select path="cliente.cliente_id">
                     <form:options items="${bClientes}" itemValue="cliente_id" itemLabel="nombre"/>
                     </form:select><br><br>

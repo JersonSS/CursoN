@@ -10,7 +10,7 @@ import pe.senati.entity.Venta;
 public interface VentaRepository extends JpaRepository<Venta, Integer>
 {
     @Query(value = "select count(*) \"count\" \n" + //
-				"from venta \n" + //
+				"from ventas \n" + //
 				"where venta_id=:venta_id AND entregado = false", nativeQuery = true)
 	public abstract int isDelete(Integer venta_id);
 }

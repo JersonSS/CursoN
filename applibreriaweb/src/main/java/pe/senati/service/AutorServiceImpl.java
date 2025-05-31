@@ -48,6 +48,11 @@ public class AutorServiceImpl implements AutorService
     public Collection<Autor> findAll() {
         return repository.findAll();
     }
+    
+    @Override
+    public int isDelete(Integer autor_id) {
+        return repository.isDelete(autor_id);
+    }
 
     @Override
     public Collection<Object[]> findAll_autor_libro() {

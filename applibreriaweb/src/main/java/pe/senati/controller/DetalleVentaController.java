@@ -72,16 +72,10 @@ public class DetalleVentaController {
     @GetMapping("/borrar/{detalle_id}")
     public String borrar_GET(Model model, @PathVariable Integer detalle_id) {
 
-        // int count = detalleVentaService.isDelete(detalle_id);
+        DetalleVenta detalleVentaModel = detalleVentaService.findById(detalle_id);
+        model.addAttribute("detalleVenta", detalleVentaModel);
+        return "DetalleVenta/BorrarDetalleVenta";
 
-        // if(count==0){
-        //     DetalleVenta detalleVentaModel = detalleVentaService.findById(detalle_id);
-        //     model.addAttribute("detalleVenta", detalleVentaModel);
-        //     return "DetalleVenta/BorrarDetalleVenta";
-
-        // }
-
-        return "DetalleVenta/Error";
     }
 
     @PostMapping("/borrar/{detalle_id}")

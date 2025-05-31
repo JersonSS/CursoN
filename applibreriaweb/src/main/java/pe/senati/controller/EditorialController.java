@@ -55,9 +55,15 @@ public class EditorialController {
 
     @GetMapping("/borrar/{editorial_id}")
     public String borrar_GET(Model model, @PathVariable Integer editorial_id) {
-        Editorial editorialModel = editorialService.findById(editorial_id);
-        model.addAttribute("editorial", editorialModel);
-        return "Editorial/BorrarEditorial";
+
+        int count = editorialService.isDelete(editorial_id);
+
+        if (count == 0) {
+            Editorial editorialModel = editorialService.findById(editorial_id);
+            model.addAttribute("editorial", editorialModel);
+            return "Editorial/BorrarEditorial";
+        }
+        return "Editorial/Error";
     }
 
     @PostMapping("/borrar/{editorial_id}")

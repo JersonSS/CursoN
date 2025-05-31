@@ -1,21 +1,26 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Listar Editoriales</title>
+<meta charset="UTF-8">
+<title>Listar Editoriales</title>
 </head>
 <body>
-    <h2>Lista de Editoriales</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>País</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
+    <div align="center">
+        <h3>¡Librería - Todos vuelven!</h3>
+        <div style="color: red; padding: 5px 0px 5px 0px;">Lista de Editoriales</div>
+        
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>País</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
         <tbody>
             <c:forEach var="editorial" items="${bEditoriales}">
                 <tr>
@@ -23,13 +28,16 @@
                     <td>${editorial.nombre}</td>
                     <td>${editorial.pais}</td>
                     <td>
-                        <a href="/editoriales/editar/${editorial.editorial_id}">Editar</a>
-                        <a href="/editoriales/borrar/${editorial.editorial_id}">Borrar</a>
+                        <a href="/libreria/editoriales/editar/${editorial.editorial_id}">Editar</a>
+                        <a href="/libreria/editoriales/borrar/${editorial.editorial_id}">Borrar</a>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
-    </table>
-    <a href="/editoriales/registrar">Registrar Nueva Editorial</a>
+        </table>
+        <br>
+        <a href="/libreria/index">Página Principal</a>
+        <a href="/libreria/editoriales/registrar">Registrar Nueva Editorial</a>
+    </div>
 </body>
 </html>

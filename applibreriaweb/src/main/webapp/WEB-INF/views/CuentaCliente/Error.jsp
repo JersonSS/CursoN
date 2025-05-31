@@ -5,11 +5,11 @@
     <title>Error</title>
 </head>
 <body>
-    <h1>ERROR 404</h1>
+    <h3>¡ERROR!</h3>
 
     <h2>La cuenta que intenta eliminar cliente tiene ventas asociadas pendiente, sino contacte con el administrador</h2>
 
-    <a href="/libreria/cuentas-clientes/listar">Volver a la cuentas de clientes</a>
+    <a href="/libreria/cuentas-clientes/listar">Volver a la lista de cuentas de clientes</a>
 
 </body>
 </html>

@@ -48,5 +48,11 @@ public class GeneroServiceImpl implements GeneroService
     public Collection<Genero> findAll() {
         return repository.findAll();
     }
+    
+    @Override
+    @Transactional(readOnly = true)
+    public int isDelete(Integer genero_id) {
+        return repository.isDelete(genero_id);
+    }
    
 }

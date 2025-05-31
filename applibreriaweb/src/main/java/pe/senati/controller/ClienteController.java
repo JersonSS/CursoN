@@ -56,9 +56,14 @@ public class ClienteController
 
     @GetMapping("/borrar/{cliente_id}")
     public String borrar_GET(Model model, @PathVariable Integer cliente_id) {
-        Cliente clienteModel = clienteService.findById(cliente_id);
-        model.addAttribute("cliente", clienteModel);
-        return "Cliente/BorrarCliente";
+        
+        int count = clienteService.isDelete(cliente_id);
+        if (count == 0) {
+            Cliente clienteModel = clienteService.findById(cliente_id);
+            model.addAttribute("cliente", clienteModel);
+            return "Cliente/BorrarCliente";
+        }
+        return "Cliente/Error";
     }
 
     @PostMapping("/borrar/{cliente_id}")

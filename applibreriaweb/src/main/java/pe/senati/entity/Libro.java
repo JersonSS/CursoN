@@ -60,7 +60,7 @@ public class Libro implements Serializable
     @JoinColumn(name = "editorial_id", nullable = false)
     private Editorial editorial;
 
-    @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "libro")
     private List<DetalleVenta> itemsDetalleVentas = new ArrayList<>();
 
     @ManyToMany(mappedBy = "itemsLibros")

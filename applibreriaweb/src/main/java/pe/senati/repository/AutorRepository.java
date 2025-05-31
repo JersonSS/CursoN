@@ -16,4 +16,11 @@ public interface AutorRepository extends JpaRepository<Autor, Integer>
                 "inner join autores a on a.autor_id = al.autor_id\n" + //
                 "inner join libros l on l.libro_id = al.libro_id;", nativeQuery = true) //
     public abstract Collection<Object[]> findAll_autor_libro();
+    
+    @Query(value = "SELECT count(*) \"count\" \n" + //
+                "    FROM autores a\n" + //
+                "    left join autor_libro al ON al.autor_id = a.autor_id\n" + //
+                "    WHERE a.autor_id = :autor_id \n" + //
+                "    AND al.autor_id IS NOT NULL", nativeQuery = true)
+    public abstract int isDelete(Integer autor_id);
 }

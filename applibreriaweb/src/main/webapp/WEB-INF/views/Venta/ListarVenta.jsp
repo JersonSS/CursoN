@@ -12,7 +12,9 @@
             <tr>
                 <th>ID</th>
                 <th>Total</th>
+                <th>Entregado</th>
                 <th>Fecha de Venta</th>
+                <th>Cliente</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -21,15 +23,18 @@
                 <tr>
                     <td>${venta.venta_id}</td>
                     <td>${venta.total}</td>
+                    <td>${venta.entregado ? 'Sí' : 'No'}</td>
                     <td>${venta.fechaVenta}</td>
+                    <td>${venta.cliente.nombre}</td>
                     <td>
-                        <a href="/ventas/editar/${venta.venta_id}">Editar</a>
-                        <a href="/ventas/borrar/${venta.venta_id}">Borrar</a>
+                        <a href="/libreria/ventas/editar/${venta.venta_id}">Editar</a>
+                        <a href="/libreria/ventas/borrar/${venta.venta_id}">Borrar</a>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
-    <a href="/ventas/registrar">Registrar Nueva Venta</a>
+    <a href="/libreria/index">Página Principal</a>
+    <a href="/libreria/ventas/registrar">Registrar Nueva Venta</a>
 </body>
 </html>

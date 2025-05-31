@@ -13,4 +13,5 @@ public interface AutorService
     public abstract Collection<Autor> findAll();
 
     public abstract Collection<Object[]> findAll_autor_libro();
+    public abstract int isDelete(Integer autor_id);
 }

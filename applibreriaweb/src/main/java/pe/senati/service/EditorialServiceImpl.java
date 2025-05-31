@@ -48,5 +48,10 @@ public class EditorialServiceImpl implements EditorialService
     public Collection<Editorial> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public int isDelete(Integer editorial_id) {
+        return repository.isDelete(editorial_id);
+    }
    
 }

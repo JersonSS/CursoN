@@ -1,21 +1,26 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Listar Géneros</title>
+<meta charset="UTF-8">
+<title>Listar Géneros</title>
 </head>
 <body>
-    <h2>Lista de Géneros</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
+    <div align="center">
+        <h3>¡Librería - Todos vuelven!</h3>
+        <div style="color: red; padding: 5px 0px 5px 0px;">Lista de Géneros</div>
+        
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
         <tbody>
             <c:forEach var="genero" items="${bGeneros}">
                 <tr>
@@ -23,13 +28,16 @@
                     <td>${genero.nombre}</td>
                     <td>${genero.descripcion}</td>
                     <td>
-                        <a href="/generos/editar/${genero.genero_id}">Editar</a>
-                        <a href="/generos/borrar/${genero.genero_id}">Borrar</a>
+                        <a href="/libreria/generos/editar/${genero.genero_id}">Editar</a>
+                        <a href="/libreria/generos/borrar/${genero.genero_id}">Borrar</a>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
-    </table>
-    <a href="/generos/registrar">Registrar Nuevo Género</a>
+        </table>
+        <br>
+        <a href="/libreria/index">Página Principal</a>
+        <a href="/libreria/generos/registrar">Registrar Nuevo Género</a>
+    </div>
 </body>
 </html>

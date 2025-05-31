@@ -14,24 +14,29 @@
                 <th>Cantidad</th>
                 <th>Precio Unitario</th>
                 <th>Subtotal</th>
+                <th>Venta ID</th>
+                <th>Libro</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <c:forEach var="detalleVenta" items="${bDetallesVentas}">
+            <c:forEach var="detalle" items="${bDetallesVentas}">
                 <tr>
-                    <td>${detalleVenta.detalle_id}</td>
-                    <td>${detalleVenta.cantidad}</td>
-                    <td>${detalleVenta.precioUnitario}</td>
-                    <td>${detalleVenta.subtotal}</td>
+                    <td>${detalle.detalle_id}</td>
+                    <td>${detalle.cantidad}</td>
+                    <td>${detalle.precioUnitario}</td>
+                    <td>${detalle.subtotal}</td>
+                    <td>${detalle.venta.venta_id}</td>
+                    <td>${detalle.libro.titulo}</td>
                     <td>
-                        <a href="/detalles-ventas/editar/${detalleVenta.detalle_id}">Editar</a>
-                        <a href="/detalles-ventas/borrar/${detalleVenta.detalle_id}">Borrar</a>
+                        <a href="/libreria/detalles-ventas/editar/${detalle.detalle_id}">Editar</a>
+                        <a href="/libreria/detalles-ventas/borrar/${detalle.detalle_id}">Borrar</a>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
-    <a href="/detalles-ventas/registrar">Registrar Nuevo Detalle de Venta</a>
+    <a href="/libreria/index">Página Principal</a>
+    <a href="/libreria/detalles-ventas/registrar">Registrar Nuevo Detalle</a>
 </body>
 </html>

@@ -1,21 +1,26 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar Editorial</title>
+<meta charset="UTF-8">
+<title>Editar Editorial</title>
 </head>
 <body>
-    <h2>Editar Editorial</h2>
-    <form action="/editoriales/editar/${editorial.editorial_id}" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="${editorial.nombre}" required><br>
+    <div align="center">
+        <h3>¡Librería - Todos vuelven!</h3>
+        <div style="color: red; padding: 5px 0px 5px 0px;">Editar Editorial</div>
+        
+        <form:form method="post" action="" modelAttribute="editorial">
+            <form:hidden path="editorial_id"/>
+            Nombre: <form:input type="text" path="nombre"/> <br>
+            País: <form:input type="text" path="pais"/> <br>
 
-        <label for="pais">País:</label>
-        <input type="text" id="pais" name="pais" value="${editorial.pais}" required><br>
-
-        <input type="submit" value="Actualizar">
-    </form>
-    <a href="/editoriales/listar">Volver a la lista</a>
+            <button type="submit">Guardar</button>
+            <button type="button" onclick="window.location.href='/libreria/editoriales/listar'">Cancelar</button>
+        </form:form>
+    </div>
 </body>
 </html>

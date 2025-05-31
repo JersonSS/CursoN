@@ -7,9 +7,9 @@
 <body>
     <h3>¡ERROR!</h3>
 
-    <h2>El libro esta relacionado con otra entidad y no se puede eliminar.</h2>
+    <h2>La venta está relacionada con otra entidad y no se puede eliminar.</h2>
 
-    <a href="/libreria/libros/listar">Volver a la lista de libros</a>
+    <a href="/libreria/ventas/listar">Volver a la lista de ventas</a>
 
 </body>
 </html>

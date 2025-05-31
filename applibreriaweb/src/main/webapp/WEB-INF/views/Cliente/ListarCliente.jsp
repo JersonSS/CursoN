@@ -15,10 +15,9 @@
                 <th>Apellido</th>
                 <th>DNI</th>
                 <th>Teléfono</th>
-                <th>Email</th>
+                <th>Correo</th>
                 <th>Dirección</th>
                 <th>Fecha Nacimiento</th>
-                <th>Fecha Registro</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -30,10 +29,9 @@
                     <td>${cliente.apellido}</td>
                     <td>${cliente.dni}</td>
                     <td>${cliente.telefono}</td>
-                    <td>${cliente.email}</td>
+                    <td>${cliente.correo}</td>
                     <td>${cliente.direccion}</td>
                     <td>${cliente.fechaNacimiento}</td>
-                    <td>${cliente.fechaRegistro}</td>
                     <td>
                         <a href="/libreria/clientes/editar/${cliente.cliente_id}">Editar</a>
                         <a href="/libreria/clientes/borrar/${cliente.cliente_id}">Borrar</a>

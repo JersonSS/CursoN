@@ -1,21 +1,26 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar Género</title>
+<meta charset="UTF-8">
+<title>Editar Género</title>
 </head>
 <body>
-    <h2>Editar Género</h2>
-    <form action="/generos/editar/${genero.genero_id}" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="${genero.nombre}" required><br>
+    <div align="center">
+        <h3>¡Librería - Todos vuelven!</h3>
+        <div style="color: red; padding: 5px 0px 5px 0px;">Editar Género</div>
+        
+        <form:form method="post" action="" modelAttribute="genero">
+            <form:hidden path="genero_id"/>
+            Nombre: <form:input type="text" path="nombre"/> <br>
+            Descripción: <form:input type="text" path="descripcion"/> <br>
 
-        <label for="descripcion">Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" value="${genero.descripcion}" required><br>
-
-        <input type="submit" value="Actualizar">
-    </form>
-    <a href="/generos/listar">Volver a la lista</a>
+            <button type="submit">Guardar</button>
+            <button type="button" onclick="window.location.href='/libreria/generos/listar'">Cancelar</button>
+        </form:form>
+    </div>
 </body>
 </html>

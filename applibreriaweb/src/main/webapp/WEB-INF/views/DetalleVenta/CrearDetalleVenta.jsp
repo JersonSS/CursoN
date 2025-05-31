@@ -1,24 +1,46 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registrar Detalle de Venta</title>
+<meta charset="UTF-8">
+<title>Registrar Detalle de Venta</title>
 </head>
 <body>
-    <h2>Registrar Nuevo Detalle de Venta</h2>
-    <form action="/detalles-ventas/registrar" method="post">
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" name="cantidad" required><br>
+    <div align="center">
+        <h3>¡Librería - Todos vuelven!</h3>
+        <div style="color: red; padding: 5px 0px 5px 0px;">Registrar Nuevo Detalle de Venta</div>
 
-        <label for="precioUnitario">Precio Unitario:</label>
-        <input type="number" id="precioUnitario" name="precioUnitario" required><br>
+        <form:form method="post" action="" modelAttribute="detalleVenta">
+            Cantidad: <form:input type="number" path="cantidad" min="1" cssClass="campo-cantidad" /> <br>
+            Precio Unitario: <form:input type="text" path="precioUnitario" cssClass="campo-precio"/> <br>
+            Subtotal: <form:input type="text" path="subtotal" cssClass="campo-subtotal" readonly="true"/> <br>
+            
+            Venta: <form:select path="venta.venta_id">
+                    <form:options items="${bVentas}" itemValue="venta_id" itemLabel="venta_id"/>
+            </form:select><br>
+            
+            Libro: <form:select path="libro.libro_id">
+                    <form:options items="${bLibros}" itemValue="libro_id" itemLabel="titulo"/>
+            </form:select><br><br>
 
-        <label for="subtotal">Subtotal:</label>
-        <input type="number" id="subtotal" name="subtotal" required><br>
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="window.location.href='/libreria/detalles-ventas/listar'">Cancelar</button>
+        </form:form>
+    </div>
 
-        <input type="submit" value="Registrar">
-    </form>
-    <a href="/detalles-ventas/listar">Volver a la lista</a>
+    <script>
+    function calcularSubtotal() {
+        const cantidad = parseFloat(document.querySelector('.campo-cantidad').value) || 0;
+        const precio = parseFloat(document.querySelector('.campo-precio').value) || 0;
+        const subtotal = cantidad * precio;
+        document.querySelector('.campo-subtotal').value = subtotal.toFixed(2);
+    }
+
+        document.querySelector('.campo-cantidad').addEventListener('input', calcularSubtotal);
+        document.querySelector('.campo-precio').addEventListener('input', calcularSubtotal);
+    </script>
 </body>
 </html>

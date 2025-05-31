@@ -56,9 +56,15 @@ public class AutorController
 
     @GetMapping("/borrar/{autor_id}")
     public String borrar_GET(Model model, @PathVariable Integer autor_id) {
-        Autor autorModel = autorService.findById(autor_id);
-        model.addAttribute("autor", autorModel);
-        return "Autor/BorrarAutor";
+        int count = autorService.isDelete(autor_id);
+
+        if(count==0){
+            Autor autorModel = autorService.findById(autor_id);
+            model.addAttribute("autor", autorModel);
+            return "Autor/BorrarAutor";
+        }
+
+        return "Autor/Error";
     }
 
     @PostMapping("/borrar/{autor_id}")

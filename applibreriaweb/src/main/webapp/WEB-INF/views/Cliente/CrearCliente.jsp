@@ -18,10 +18,9 @@
             Apellido: <form:input type="text" path="apellido"/> <br>
             DNI: <form:input type="text" path="dni"/> <br>
             Teléfono: <form:input type="text" path="telefono"/> <br>
-            Email: <form:input type="email" path="email"/> <br>
+            Correo: <form:input type="email" path="correo"/> <br>
             Dirección: <form:input type="text" path="direccion"/> <br>
             Fecha de Nacimiento: <form:input type="date" path="fechaNacimiento"/> <br>
-            Fecha de Registro: <form:input type="date" path="fechaRegistro"/> <br>
 
             <button type="submit">Registrar</button>
             <button type="button" onclick="window.location.href='/libreria/clientes/listar'">Cancelar</button>

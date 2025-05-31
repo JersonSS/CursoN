@@ -29,7 +29,7 @@ public class Editorial implements Serializable
     @Column
     private String pais;
 
-    @OneToMany
+    @OneToMany(mappedBy = "editorial")
     private List<Libro> itemslibros = new ArrayList<>();
 
     public Editorial() {}

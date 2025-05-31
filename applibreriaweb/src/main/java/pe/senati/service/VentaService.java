@@ -11,4 +11,6 @@ public interface VentaService
     public abstract void delete(Integer venta_id);
     public abstract Venta findById(Integer venta_id);
     public abstract Collection<Venta> findAll();
+
+    public abstract int isDelete(Integer venta_id);
 }

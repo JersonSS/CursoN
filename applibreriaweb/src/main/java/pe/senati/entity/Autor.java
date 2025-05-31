@@ -37,7 +37,7 @@ public class Autor implements Serializable
     @Column
     private String nacionalidad;
 
-    @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd", iso = ISO.DATE)
     private LocalDate fechaNacimiento;
 
     @ManyToMany

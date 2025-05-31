@@ -8,9 +8,13 @@
     <h1>VISUAL LO TIENE TODO</h1>
     <p>Hola munditoaaaa</p>
 
-    <a href="/senati/jefe/listar">Modulo de Jefe</a>
-    <a href="/senati/categoria/listar">Modulo de Categoria</a>
-    <a href="/senati/proveedor/listar">Modulo de Proveedor</a>
-    <a href="/senati/producto/listar">Modulo de Producto</a>
+        <li><a href="/libreria/libros/listar">Modulo Libros</a></li>
+        <li><a href="/libreria/cuentas-clientes/listar">Modulo Cuentas de Clientes</a></li>
+        <li><a href="/libreria/clientes/listar">Modulo Clientes</a></li>
+        <li><a href="/libreria/autores/listar">Modulo Autores</a></li>
+        <li><a href="/libreria/editoriales/listar">Modulo Editoriales</a></li>
+        <li><a href="/libreria/detalles-ventas/listar">Modulo detalles ventas - en duda</a></li>
+        <li><a href="/libreria/generos/listar">Modulo Generos</a></li>
+        <li><a href="/libreria/ventas/listar">Modulo Ventas</a></li>
 </body>
 </html>

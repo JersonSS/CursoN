@@ -39,7 +39,7 @@ public class Libro implements Serializable
     private Boolean digital; 
 
     @Column
-    private Character edicion;
+    private Byte edicion;
 
     @Column
     private Short numeroPaginas;
@@ -50,10 +50,10 @@ public class Libro implements Serializable
     @Column
     private Double precio;
     
-    @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd", iso = ISO.DATE)
     private LocalDate fechaPublicacion;
     
-    @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd", iso = ISO.DATE)
     private LocalDate fechaRegistro;
 
     @ManyToOne
@@ -76,7 +76,7 @@ public class Libro implements Serializable
 
     public Libro() {}
 
-    public Libro(Integer libro_id, String titulo, Boolean digital, Character edicion, Short numeroPaginas,
+    public Libro(Integer libro_id, String titulo, Boolean digital, Byte edicion, Short numeroPaginas,
             Integer stock, Double precio, LocalDate fechaPublicacion, LocalDate fechaRegistro) {
         this.libro_id = libro_id;
         this.titulo = titulo;
@@ -117,11 +117,11 @@ public class Libro implements Serializable
         this.digital = digital;
     }
 
-    public Character getEdicion() {
+    public Byte getEdicion() {
         return edicion;
     }
 
-    public void setEdicion(Character edicion) {
+    public void setEdicion(Byte edicion) {
         this.edicion = edicion;
     }
 

@@ -40,7 +40,7 @@ public class Cliente implements Serializable
     @Column(unique = true, nullable = false)
     private String correo;
 
-    @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd", iso = ISO.DATE)
     private LocalDate fechaNacimiento;
 
     @Column
@@ -52,7 +52,7 @@ public class Cliente implements Serializable
     @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
     private CuentaCliente cuentaCliente;
 
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Venta> itemsVentas = new ArrayList<>();
 
     public Cliente() {}

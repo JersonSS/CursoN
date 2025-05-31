@@ -13,7 +13,7 @@ public class LibroMapper
 
     private Boolean digital; 
 
-    private Character edicion;
+    private Byte edicion;
 
     private Short numeroPaginas;
 
@@ -29,7 +29,7 @@ public class LibroMapper
 
     public LibroMapper() {}
 
-    public LibroMapper(Integer libro_id, String titulo, Boolean digital, Character edicion, Short numeroPaginas,
+    public LibroMapper(Integer libro_id, String titulo, Boolean digital, Byte edicion, Short numeroPaginas,
             Integer stock, Double precio, LocalDate fechaPublicacion, LocalDate fechaRegistro, Integer editorial_id) {
         this.libro_id = libro_id;
         this.titulo = titulo;
@@ -72,11 +72,11 @@ public class LibroMapper
         this.digital = digital;
     }
 
-    public Character getEdicion() {
+    public Byte getEdicion() {
         return edicion;
     }
 
-    public void setEdicion(Character edicion) {
+    public void setEdicion(Byte edicion) {
         this.edicion = edicion;
     }
 

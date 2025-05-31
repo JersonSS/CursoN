@@ -53,4 +53,9 @@ public class LibroServiceImpl implements LibroService
     public Collection<Object[]> findAll_libro_genero() {
         return repository.findAll_libro_genero();
     }
+
+    @Override
+    public int isDelete(Integer libro_id) {
+        return repository.isDelete(libro_id);
+    }
 }

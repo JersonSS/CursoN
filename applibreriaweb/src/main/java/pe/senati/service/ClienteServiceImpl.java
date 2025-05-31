@@ -48,5 +48,10 @@ public class ClienteServiceImpl implements ClienteService
     public Collection<Cliente> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public int isDelete(Integer cliente_id) {
+        return repository.isDelete(cliente_id);
+    }
    
 }

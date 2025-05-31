@@ -48,5 +48,10 @@ public class VentaServiceImpl implements VentaService
     public Collection<Venta> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public int isDelete(Integer venta_id) {
+        return repository.isDelete(venta_id);
+    }
    
 }

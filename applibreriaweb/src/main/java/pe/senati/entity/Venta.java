@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,11 +32,14 @@ public class Venta implements Serializable
     @Column
     private Double total;
 
-    @DateTimeFormat(pattern = "yyyy/MM/dd", iso = ISO.DATE)
+    @Column
+    private Boolean entregado;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd", iso = ISO.DATE)
     private LocalDate fechaVenta;
 
 
-    @OneToMany(mappedBy = "venta")
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
     private List<DetalleVenta> itemsDetalleVentas = new ArrayList<>();
 
     @ManyToOne
@@ -44,9 +48,10 @@ public class Venta implements Serializable
 
     public Venta() {}
 
-    public Venta(Integer venta_id, Double total, LocalDate fechaVenta) {
+    public Venta(Integer venta_id, Double total, Boolean entregado, LocalDate fechaVenta) {
         this.venta_id = venta_id;
         this.total = total;
+        this.entregado = entregado;
         this.fechaVenta = fechaVenta;
     }
 
@@ -72,6 +77,16 @@ public class Venta implements Serializable
 
     public void setFechaVenta(LocalDate fechaVenta) {
         this.fechaVenta = fechaVenta;
+    }
+
+    
+
+    public Boolean getEntregado() {
+        return entregado;
+    }
+
+    public void setEntregado(Boolean entregado) {
+        this.entregado = entregado;
     }
 
     public List<DetalleVenta> getItemsDetalleVentas() {

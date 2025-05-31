@@ -11,4 +11,7 @@ public interface ClienteService
     public abstract void delete(Integer cliente_id);
     public abstract Cliente findById(Integer cliente_id);
     public abstract Collection<Cliente> findAll();
+
+    
+    public abstract int isDelete(Integer cliente_id);
 }

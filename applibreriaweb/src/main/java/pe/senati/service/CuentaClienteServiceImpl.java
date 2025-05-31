@@ -48,5 +48,10 @@ public class CuentaClienteServiceImpl implements CuentaClienteService
     public Collection<CuentaCliente> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public int isDelete(Integer cuenta_cliente_id) {
+        return repository.isDelete(cuenta_cliente_id);
+    }
    
 }

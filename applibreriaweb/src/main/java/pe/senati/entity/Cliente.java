@@ -49,10 +49,10 @@ public class Cliente implements Serializable
     @Column
     private String direccion;
 
-    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "cliente", cascade = CascadeType.REMOVE)
     private CuentaCliente cuentaCliente;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
     private List<Venta> itemsVentas = new ArrayList<>();
 
     public Cliente() {}

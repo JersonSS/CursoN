@@ -13,6 +13,7 @@
                 <th>ID</th>
                 <th>Usuario</th>
                 <th>Fecha de Registro</th>
+                <th>Cliente</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -22,14 +23,16 @@
                     <td>${cuentaCliente.cuenta_id}</td>
                     <td>${cuentaCliente.usuario}</td>
                     <td>${cuentaCliente.fechaRegistro}</td>
+                    <td>${cuentaCliente.cliente.nombre}</td>
                     <td>
-                        <a href="/cuentas-clientes/editar/${cuentaCliente.cuenta_id}">Editar</a>
-                        <a href="/cuentas-clientes/borrar/${cuentaCliente.cuenta_id}">Borrar</a>
+                        <a href="/libreria/cuentas-clientes/editar/${cuentaCliente.cuenta_id}">Editar</a>
+                        <a href="/libreria/cuentas-clientes/borrar/${cuentaCliente.cuenta_id}">Borrar</a>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
-    <a href="/cuentas-clientes/registrar">Registrar Nueva Cuenta de Cliente</a>
+    <a href="/libreria/cuentas-clientes/registrar">Registrar Nueva Cuenta</a>
+    <a href="/libreria/index">Volver al Inicio</a>
 </body>
 </html>

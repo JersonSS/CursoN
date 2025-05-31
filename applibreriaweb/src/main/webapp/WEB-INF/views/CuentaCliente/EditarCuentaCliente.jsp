@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,15 +8,16 @@
 </head>
 <body>
     <h2>Editar Cuenta de Cliente</h2>
-    <form action="/cuentas-clientes/editar/${cuentaCliente.cuenta_id}" method="post">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" value="${cuentaCliente.usuario}" required><br>
+    <form:form method="post" action="" modelAttribute="cuentaCliente">
+        Usuario: <form:input type="text" id="usuario" path="usuario" required="true"/><br>
+        Clave: <form:input type="password" id="clave" path="clave" required="true"/><br>
 
-        <label for="clave">Clave:</label>
-        <input type="password" id="clave" name="clave" value="${cuentaCliente.clave}" required><br>
+         Cliente: <form:select path="cliente.cliente_id">
+                    <form:options items="${bClientes}" itemValue="cliente_id" itemLabel="nombre"/>
+                    </form:select><br><br>
 
         <input type="submit" value="Actualizar">
-    </form>
-    <a href="/cuentas-clientes/listar">Volver a la lista</a>
+    </form:form>
+    <a href="/libreria/cuentas-clientes/listar">Volver a la lista</a>
 </body>
 </html>

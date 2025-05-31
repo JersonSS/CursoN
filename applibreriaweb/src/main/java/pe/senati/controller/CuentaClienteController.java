@@ -52,7 +52,6 @@ public class CuentaClienteController {
         CuentaCliente cuentaClienteModel = cuentaClienteService.findById(cuenta_id);
         model.addAttribute("cuentaCliente", cuentaClienteModel);
 
-        model.addAttribute("bClientes", clienteService.findAll());
         map.put("bClientes", clienteService.findAll());
 
         return "CuentaCliente/EditarCuentaCliente";

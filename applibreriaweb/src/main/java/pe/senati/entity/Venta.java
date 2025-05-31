@@ -39,7 +39,7 @@ public class Venta implements Serializable
     private LocalDate fechaVenta;
 
 
-    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.REMOVE)
     private List<DetalleVenta> itemsDetalleVentas = new ArrayList<>();
 
     @ManyToOne

@@ -35,7 +35,7 @@ public class CuentaCliente implements Serializable
     @Column(updatable = false)
     private LocalDate fechaRegistro;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "cliente_id", unique = true, nullable = false)
     private Cliente cliente;
  

@@ -1,26 +1,28 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar Autor</title>
+<meta charset="UTF-8">
+<title>Editar Autor</title>
 </head>
 <body>
-    <h2>Editar Autor</h2>
-    <form action="/autores/editar/${autor.autor_id}" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="${autor.nombre}" required><br>
+    <div align="center">
+        <h3>¡Librería - Todos vuelven!</h3>
+        <div style="color: red; padding: 5px 0px 5px 0px;">Editar Autor</div>
+        
+        <form:form method="post" action="" modelAttribute="autor">
+            <form:hidden path="autor_id"/>
+            Nombre: <form:input type="text" path="nombre"/> <br>
+            Apellido: <form:input type="text" path="apellido"/> <br>
+            Nacionalidad: <form:input type="text" path="nacionalidad"/> <br>
+            Fecha de Nacimiento: <form:input type="date" path="fechaNacimiento"/> <br>
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" value="${autor.apellido}" required><br>
-
-        <label for="nacionalidad">Nacionalidad:</label>
-        <input type="text" id="nacionalidad" name="nacionalidad" value="${autor.nacionalidad}" required><br>
-
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="${autor.fechaNacimiento}" required><br>
-
-        <input type="submit" value="Actualizar">
-    </form>
-    <a href="/autores/listar">Volver a la lista</a>
+            <button type="submit">Guardar</button>
+            <button type="button" onclick="window.location.href='/libreria/autores/listar'">Cancelar</button>
+        </form:form>
+    </div>
 </body>
 </html>

@@ -11,8 +11,8 @@ public interface CuentaClienteRepository extends JpaRepository<CuentaCliente, In
 {
     @Query(value = "select count(*) \"count\" \n" + //
 				"from cuenta_clientes cc \n" + //
-				"inner join clientes c on c.cliente_id = cc.cliente_id\n" + //
+				"inner join clientes c on c.cliente_id = cc.cuenta_id\n" + //
                 "inner join ventas v on c.cliente_id = v.cliente_id\n" + //
-				"where cc.cuenta_cliente_id=:cuenta_cliente_id AND v.entregado = false", nativeQuery = true)
+				"where cc.cuenta_id=:cuenta_cliente_id AND v.entregado = false", nativeQuery = true)
 	public abstract int isDelete(Integer cuenta_cliente_id);
 }

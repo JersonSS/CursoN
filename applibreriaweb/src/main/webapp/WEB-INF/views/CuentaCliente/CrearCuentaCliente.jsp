@@ -1,21 +1,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registrar Cuenta de Cliente</title>
+    <title>Crear Cuenta de Cliente</title>
 </head>
 <body>
-    <h2>Registrar Nueva Cuenta de Cliente</h2>
-    <form action="/cuentas-clientes/registrar" method="post">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" required><br>
+    <h2>Crear Cuenta de Cliente</h2>
+    <form:form method="post" action="" modelAttribute="cuentaCliente">
 
-        <label for="clave">Clave:</label>
-        <input type="password" id="clave" name="clave" required><br>
-
-        <input type="submit" value="Registrar">
-    </form>
-    <a href="/cuentas-clientes/listar">Volver a la lista</a>
+        Usuario: <form:input type="text" id="usuario" path="usuario" required="true"/><br>
+        >Clave: <form:input type="password" id="clave" path="clave" required="true"/><br>
+        Cliente: <form:select path="cliente.cliente_id">
+                    <form:options items="${bClientes}" itemValue="cliente_id" itemLabel="nombre"/>
+                    </form:select><br><br>
+        
+        <input type="submit" value="Crear">
+    </form:form>
+    <a href="/libreria/cuentas-clientes/listar">Volver a la lista</a>
 </body>
 </html>
